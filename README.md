@@ -6,6 +6,17 @@ O objetivo é permitir que advogados, servidores e interessados acompanhem infor
 
 ---
 
+## 👥 Participantes do Projeto
+
+| Nome                              | RE                                |
+|-----------------------------------|-----------------------------------|
+| Maria Hilmar Gomes da Silva       | 048601                            |
+| Roger de Melo Guimarães Paulino   | 047515                            |
+| Moacyr de Oliveira Ribeiro Matos  | 044781                            |
+| Iuri Batista Beserra              | 041487                            |
+
+---
+
 ## 🏛️ O que é o SAPRE?
 
 O SAPRE (Sistema de Administração de Precatórios) é a plataforma do TJBA (Tribunal de Justiça do Estado da Bahia) utilizada para gerenciar precatórios e RPVs (Requisições de Pequeno Valor). 
