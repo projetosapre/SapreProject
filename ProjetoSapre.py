@@ -31,7 +31,6 @@ def carregar_dados():
         "Credor": [f"Advogado {i % 10 + 1}" for i in range(n_precatorios)],
         "Valor": np.random.randint(50_000, 200_000, size=n_precatorios),
         "Situação": np.random.choice(situacoes, size=n_precatorios),
-        "Núcleo": np.random.choice(nucleos, size=n_precatorios),
         "Documentos Anexados (%)": np.random.randint(70, 101, size=n_precatorios)
     })
 
@@ -63,12 +62,6 @@ def criar_menu_lateral():
         st.subheader("🔍 Filtros")
 
         df = carregar_dados()
-
-        filtro_nucleo = st.multiselect(
-            "Núcleo:",
-            options=df["Núcleo"].unique(),
-            default=df["Núcleo"].unique()
-        )
 
         filtro_situacao = st.multiselect(
             "Situação:",
@@ -106,7 +99,6 @@ def criar_menu_lateral():
         st.info("Sistema SAPRE v2.0\nÚltima atualização: Hoje")
 
         return pagina_selecionada, {
-            "nucleo": filtro_nucleo,
             "situacao": filtro_situacao,
             "credor": filtro_credor,
             "valor_min": filtro_valor_min,
@@ -120,7 +112,6 @@ def criar_menu_lateral():
 # -------------------------------------------------
 def aplicar_filtros(df, filtros):
     df_filtrado = df[
-        (df["Núcleo"].isin(filtros["nucleo"])) &
         (df["Situação"].isin(filtros["situacao"])) &
         (df["Credor"].isin(filtros["credor"])) &
         (df["Valor"] >= filtros["valor_min"]) &
@@ -217,12 +208,6 @@ def analises_avancadas(df_filtrado):
                                      color="Situação", title="Valor vs % Documentos Anexados")
             st.plotly_chart(fig_scatter, use_container_width=True)
 
-        st.subheader("📊 Análise por Núcleo")
-        analise_nucleo = df_filtrado.groupby("Núcleo").agg({
-            "Valor": ["count", "sum", "mean"],
-            "Documentos Anexados (%)": "mean"
-        }).round(2)
-        st.dataframe(analise_nucleo, use_container_width=True)
     else:
         st.info("Nenhum dado encontrado com os filtros aplicados.")
 
@@ -315,3 +300,4 @@ if __name__ == "__main__":
 
 # Para executar o projeto:
 # streamlit run projeto_modificado.py
+
