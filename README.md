@@ -42,3 +42,23 @@ Este dashboard foi criado para espelhar essas informações em uma interface ami
   - Ativação de alertas e limites para notificações de documentos.  
 
 ---
+
+## 🛠️ Bibliotecas Utilizadas
+
+- **[Streamlit](https://streamlit.io/)**  
+  Biblioteca para criação de interfaces web interativas de forma simples e rápida.  
+  Permite construir dashboards e aplicativos de dados sem precisar de frameworks complexos de front-end.
+
+- **[Pandas](https://pandas.pydata.org/)**  
+  Utilizada para manipulação e análise de dados tabulares.  
+  No projeto, organiza os precatórios em DataFrames, permitindo aplicar filtros e cálculos de forma eficiente.
+
+- **[NumPy](https://numpy.org/)**  
+  Biblioteca para computação numérica.  
+  Foi usada para **gerar dados simulados** (números aleatórios, amostragens) e auxiliar em cálculos matemáticos.
+
+- **[Plotly](https://plotly.com/python/)**  
+  Ferramenta para construção de **gráficos interativos** em Python.  
+  No dashboard, é usada para criar histogramas, gráficos de barras e visualizações dinâmicas que facilitam a análise.
+
+  ---
